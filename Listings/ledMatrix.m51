@@ -1,0 +1,313 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/25/2020  15:51:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\max7219.obj, .\Objects\delay.obj TO .\Objects\ledMatrix PRINT 
+>> (.\Listings\ledMatrix.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\max7219.obj (MAX7219)
+  .\Objects\delay.obj (DELAY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\ledMatrix (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0012H     UNIT         _DATA_GROUP_
+            DATA    001AH     0004H     UNIT         ?DT?MAX7219
+            DATA    001EH     0002H     UNIT         ?DT?MAIN
+            IDATA   0020H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     0130H     UNIT         ?CO?MAX7219
+            CODE    013EH     00C2H     UNIT         ?PR?_MAX7219LEFT?MAX7219
+            CODE    0200H     008CH     UNIT         ?C_C51STARTUP
+            CODE    028CH     003FH     UNIT         ?PR?_SPIWRITE?MAX7219
+            CODE    02CBH     003CH     UNIT         ?PR?MAIN?MAIN
+            CODE    0307H     002DH     UNIT         ?C?LIB_CODE
+            CODE    0334H     002CH     UNIT         ?PR?_MAX7219DISP?MAX7219
+            CODE    0360H     0025H     UNIT         ?PR?MAX7219INIT?MAX7219
+            CODE    0385H     0018H     UNIT         ?PR?TIMER0_ISR?MAIN
+            CODE    039DH     0015H     UNIT         ?PR?TIMER0INIT?MAIN
+            CODE    03B2H     0013H     UNIT         ?C_INITSEG
+            CODE    03C5H     000EH     UNIT         ?PR?_DELAYXMS?DELAY
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\ledMatrix (MAIN)
+
+
+SEGMENT                            DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/25/2020  15:51:38  PAGE 2
+
+
+
+?PR?MAIN?MAIN                    0008H    0001H
+  +--> ?PR?MAX7219INIT?MAX7219
+  +--> ?PR?TIMER0INIT?MAIN
+  +--> ?CO?MAX7219
+  +--> ?PR?_MAX7219LEFT?MAX7219
+
+?PR?MAX7219INIT?MAX7219          -----    -----
+  +--> ?PR?_SPIWRITE?MAX7219
+  +--> ?CO?MAX7219
+  +--> ?PR?_MAX7219DISP?MAX7219
+
+?PR?_MAX7219DISP?MAX7219         0017H    0003H
+  +--> ?PR?_SPIWRITE?MAX7219
+
+?PR?_MAX7219LEFT?MAX7219         0009H    000EH
+  +--> ?PR?_MAX7219DISP?MAX7219
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\ledMatrix (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00E8H         PUBLIC        P4
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0385H         PUBLIC        timer0_ISR
+  C:02CBH         PUBLIC        main
+  D:001FH         PUBLIC        leftShift
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  B:0088H.5       PUBLIC        TF0
+  C:039DH         PUBLIC        Timer0Init
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:02CBH         LINE#         10
+  C:02CBH         LINE#         11
+  C:02CBH         LINE#         12
+  C:02CEH         LINE#         13
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/25/2020  15:51:38  PAGE 3
+
+
+  C:02D1H         LINE#         14
+  C:02D4H         LINE#         15
+  C:02D4H         LINE#         16
+  C:02D4H         LINE#         22
+  C:02D8H         LINE#         23
+  C:02D8H         LINE#         24
+  C:02DBH         LINE#         25
+  C:0305H         LINE#         26
+  C:0305H         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         PROC          TIMER0INIT
+  C:039DH         LINE#         30
+  C:039DH         LINE#         31
+  C:039DH         LINE#         33
+  C:03A0H         LINE#         34
+  C:03A3H         LINE#         35
+  C:03A6H         LINE#         36
+  C:03A9H         LINE#         37
+  C:03ABH         LINE#         39
+  C:03ADH         LINE#         40
+  C:03AFH         LINE#         41
+  C:03B1H         LINE#         42
+  -------         ENDPROC       TIMER0INIT
+  -------         PROC          TIMER0_ISR
+  -------         DO            
+  D:001EH         SYMBOL        a
+  -------         ENDDO         
+  C:0385H         LINE#         45
+  C:0387H         LINE#         48
+  C:038AH         LINE#         49
+  C:038DH         LINE#         51
+  C:0395H         LINE#         52
+  C:0395H         LINE#         53
+  C:0397H         LINE#         54
+  C:039AH         LINE#         55
+  C:039AH         LINE#         56
+  -------         ENDPROC       TIMER0_ISR
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        MAX7219
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00E8H         PUBLIC        P4
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:001AH         PUBLIC        leftShiftCurrentPoint
+  C:013EH         PUBLIC        _max7219Left
+  D:001BH         PUBLIC        leftCode
+  C:0334H         PUBLIC        _max7219Disp
+  C:000EH         PUBLIC        dispCode
+  C:0360H         PUBLIC        max7219Init
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00A0H.0       PUBLIC        clk
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/25/2020  15:51:38  PAGE 4
+
+
+  B:00A0H.2       PUBLIC        din
+  D:001CH         PUBLIC        leftShiftStartPoint
+  D:001DH         PUBLIC        leftShiftEndPoint
+  B:00A0H.1       PUBLIC        cs
+  C:028CH         PUBLIC        _spiWrite
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _SPIWRITE
+  D:0007H         SYMBOL        addr
+  D:0005H         SYMBOL        dat
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:028CH         LINE#         55
+  C:028CH         LINE#         56
+  C:028CH         LINE#         57
+  C:028EH         LINE#         58
+  C:0290H         LINE#         59
+  C:0292H         LINE#         60
+  C:0294H         LINE#         61
+  C:029EH         LINE#         62
+  C:029EH         LINE#         63
+  C:02A2H         LINE#         64
+  C:02A4H         LINE#         65
+  C:02A6H         LINE#         66
+  C:02AAH         LINE#         67
+  C:02ADH         LINE#         68
+  C:02B9H         LINE#         69
+  C:02B9H         LINE#         70
+  C:02BDH         LINE#         71
+  C:02BFH         LINE#         72
+  C:02C1H         LINE#         73
+  C:02C5H         LINE#         74
+  C:02C8H         LINE#         75
+  C:02CAH         LINE#         76
+  -------         ENDPROC       _SPIWRITE
+  -------         PROC          _MAX7219DISP
+  D:0017H         SYMBOL        buf
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0334H         LINE#         78
+  C:033AH         LINE#         79
+  C:033AH         LINE#         80
+  C:033CH         LINE#         81
+  C:0346H         LINE#         82
+  C:0346H         LINE#         83
+  C:035CH         LINE#         84
+  C:035FH         LINE#         85
+  -------         ENDPROC       _MAX7219DISP
+  -------         PROC          _MAX7219LEFT
+  D:0009H         SYMBOL        buf1
+  D:000CH         SYMBOL        buf2
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:000FH         SYMBOL        tempBuf
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/25/2020  15:51:38  PAGE 5
+
+
+  C:013EH         LINE#         87
+  C:0144H         LINE#         88
+  C:0144H         LINE#         89
+  C:0146H         LINE#         91
+  C:0151H         LINE#         92
+  C:0151H         LINE#         93
+  C:015EH         LINE#         94
+  C:015EH         LINE#         95
+  C:0183H         LINE#         96
+  C:0186H         LINE#         97
+  C:0186H         LINE#         99
+  C:0186H         LINE#         100
+  C:0192H         LINE#         101
+  C:0192H         LINE#         102
+  C:01B6H         LINE#         103
+  C:01E0H         LINE#         104
+  C:01E3H         LINE#         105
+  C:01E3H         LINE#         107
+  C:01E5H         LINE#         108
+  C:01EAH         LINE#         109
+  C:01EAH         LINE#         110
+  C:01EDH         LINE#         111
+  C:01F5H         LINE#         112
+  C:01F5H         LINE#         113
+  C:01F7H         LINE#         114
+  C:01F7H         LINE#         115
+  C:01F7H         LINE#         116
+  -------         ENDPROC       _MAX7219LEFT
+  -------         PROC          MAX7219INIT
+  C:0360H         LINE#         119
+  C:0360H         LINE#         120
+  C:0360H         LINE#         122
+  C:0367H         LINE#         124
+  C:036EH         LINE#         126
+  C:0375H         LINE#         128
+  C:037EH         LINE#         130
+  -------         ENDPROC       MAX7219INIT
+  -------         ENDMOD        MAX7219
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:03C5H         PUBLIC        _delayXms
+  -------         PROC          _DELAYXMS
+  D:0006H         SYMBOL        i
+  -------         DO            
+  D:0005H         SYMBOL        j
+  -------         ENDDO         
+  C:03C5H         LINE#         5
+  C:03C5H         LINE#         6
+  C:03C5H         LINE#         7
+  C:03C7H         LINE#         9
+  C:03C7H         LINE#         10
+  C:03C9H         LINE#         11
+  C:03D2H         LINE#         12
+  -------         ENDPROC       _DELAYXMS
+  -------         ENDMOD        DELAY
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/25/2020  15:51:38  PAGE 6
+
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0307H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYXMS?DELAY
+
+Program Size: data=33.0 xdata=0 code=971
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
